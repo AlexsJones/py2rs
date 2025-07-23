@@ -177,7 +177,7 @@ function getColorForType(type: string) {
 }
 
 export default function ResourcesPage() {
-  const categories = [...new Set(resources.map(r => r.category))]
+  const categories = Array.from(new Set(resources.map(r => r.category)))
 
   return (
     <div className="container mx-auto px-4 py-8">
