@@ -9,6 +9,33 @@ export const metadata = {
   title: 'py2rs.info - Python to Rust for Developers',
   description: 'Learn Rust coming from Python. Tutorials, guides, and resources for Python developers transitioning to Rust.',
   keywords: 'Python, Rust, programming, tutorial, transition, developers',
+  metadataBase: new URL('https://py2rs.info'),
+  openGraph: {
+    title: 'py2rs.info - Python to Rust for Developers',
+    description: 'Learn Rust coming from Python. Tutorials, guides, and resources for Python developers transitioning to Rust.',
+    url: 'https://py2rs.info',
+    siteName: 'py2rs.info',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'py2rs.info - Python to Rust for Developers',
+    description: 'Learn Rust coming from Python. Tutorials, guides, and resources for Python developers transitioning to Rust.',
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
