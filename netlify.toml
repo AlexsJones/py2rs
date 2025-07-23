@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+  functions = "functions"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[dev]
+  framework = "next"
+  targetPort = 3000
