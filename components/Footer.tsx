@@ -44,11 +44,6 @@ export default function Footer() {
                   Resources
                 </Link>
               </li>
-              <li>
-                <Link href="/newsletter" className="text-gray-400 hover:text-white transition-colors">
-                  Newsletter
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -79,18 +74,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter Signup */}
+          {/* Future Links Placeholder */}
           <div>
-            <h4 className="font-semibold mb-4">Stay Updated</h4>
-            <p className="text-gray-400 mb-4 text-sm">
-              Get the latest tutorials and Rust tips delivered to your inbox.
+            <h4 className="font-semibold mb-4">More</h4>
+            <p className="text-gray-400 text-sm">
+              More content coming soon!
             </p>
-            <Link
-              href="/newsletter"
-              className="inline-block bg-rust-orange text-white px-4 py-2 rounded-lg hover:bg-rust-orange/90 transition-colors text-sm font-medium"
-            >
-              Subscribe Now
-            </Link>
           </div>
         </div>
 

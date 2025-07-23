@@ -126,18 +126,12 @@ fn read_file(filename: &str) -> Option<String> {
           <p className="text-xl mb-8 opacity-90">
             Join thousands of Python developers who have successfully transitioned to Rust.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link
               href="/tutorials"
               className="inline-flex items-center px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
             >
               Browse Tutorials <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              href="/newsletter"
-              className="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
-            >
-              Subscribe to Newsletter
             </Link>
           </div>
         </div>
