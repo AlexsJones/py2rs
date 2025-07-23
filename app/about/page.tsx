@@ -97,25 +97,41 @@ export default function AboutPage() {
 
       {/* Story Section */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Why py2rs.info Exists
-          </h2>
-          <div className="prose prose-lg dark:prose-invert mx-auto">
-            <p>
+        <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Why py2rs.info Exists
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-python-blue to-rust-orange mx-auto"></div>
+          </div>
+          
+          <div className="prose prose-lg dark:prose-invert mx-auto space-y-6">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               The idea for py2rs.info came from a simple observation: many Python developers are 
               curious about Rust but find the learning curve steep. Traditional Rust tutorials 
               often start from first principles, which can be frustrating when you already have 
               years of programming experience.
             </p>
-            <p>
+            <p className="text-gray-700 dark:text-gray-300 font-medium">
               We noticed that Python developers bring unique strengths to learning Rust:
             </p>
-            <ul>
-              <li>Strong understanding of high-level programming concepts</li>
-              <li>Experience with package management and project structure</li>
-              <li>Familiarity with testing, documentation, and best practices</li>
-              <li>A pragmatic approach to problem-solving</li>
+            <ul className="space-y-2 pl-5">
+              <li className="flex items-start">
+                <span className="text-rust-orange mr-2">•</span>
+                <span className="text-gray-700 dark:text-gray-300">Strong understanding of high-level programming concepts</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-rust-orange mr-2">•</span>
+                <span className="text-gray-700 dark:text-gray-300">Experience with package management and project structure</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-rust-orange mr-2">•</span>
+                <span className="text-gray-700 dark:text-gray-300">Familiarity with testing, documentation, and best practices</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-rust-orange mr-2">•</span>
+                <span className="text-gray-700 dark:text-gray-300">A pragmatic approach to problem-solving</span>
+              </li>
             </ul>
             <p>
               py2rs.info leverages these strengths while addressing the specific challenges Python 
