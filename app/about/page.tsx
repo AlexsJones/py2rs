@@ -143,28 +143,37 @@ export default function AboutPage() {
       </section>
 
       {/* Community Section */}
-      <section className="py-16 bg-gradient-to-r from-python-blue to-rust-orange rounded-2xl text-white">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-3xl font-bold mb-6">
-            Join the Community
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Connect with other Python developers making the transition to Rust. Share your experiences, 
-            ask questions, and help others on their journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              Join Discord Community
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
-            >
-              Follow on Twitter
-            </a>
+      <section className="py-16 bg-gradient-to-r from-python-blue to-rust-orange rounded-2xl text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center">
+          <div className="bg-white/90 text-gray-900 dark:bg-gray-900/90 dark:text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
+            Coming Soon
+          </div>
+        </div>
+        <div className="relative z-0">
+          <div className="max-w-4xl mx-auto text-center px-6">
+            <h2 className="text-3xl font-bold mb-6">
+              Join the Community
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Connect with other Python developers making the transition to Rust. Share your experiences, 
+              ask questions, and help others on their journey.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#"
+                className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors opacity-50 cursor-not-allowed"
+                aria-disabled="true"
+              >
+                Join Discord Community
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors opacity-50 cursor-not-allowed"
+                aria-disabled="true"
+              >
+                Follow on Twitter
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -181,13 +190,13 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://github.com/AlexsJones/py2rs"
               className="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
             >
               View on GitHub
             </a>
             <a
-              href="#"
+              href="https://github.com/AlexsJones/py2rs"
               className="inline-flex items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Contribution Guide

@@ -11,7 +11,8 @@ interface Resource {
   description: string
   url: string
   category: string
-  type: 'official' | 'book' | 'tool' | 'community' | 'tutorial' | 'library'
+  type: 'official' | 'book' | 'tool' | 'community' | 'tutorial' | 'library' | 'video'
+  thumbnail?: string
 }
 
 const resources: Resource[] = [
@@ -135,8 +136,42 @@ const resources: Resource[] = [
     url: 'https://discord.gg/rust-lang',
     category: 'Community',
     type: 'community'
-  }
-]
+  },
+
+  // Video Tutorials
+  {
+    title: 'Rust for Python Developers - Full Course',
+    description: 'A comprehensive video course on learning Rust with Python comparisons',
+    url: 'https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8',
+    category: 'Video Tutorials',
+    type: 'video',
+    thumbnail: 'https://img.youtube.com/vi/OX9HJsJUDxA/maxresdefault.jpg'
+  },
+  {
+    title: 'Ownership in Rust - Python to Rust',
+    description: 'Understanding ownership, borrowing, and lifetimes in Rust',
+    url: 'https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=1',
+    category: 'Video Tutorials',
+    type: 'video',
+    thumbnail: 'https://img.youtube.com/vi/OX9HJsJUDxA/maxresdefault.jpg'
+  },
+  {
+    title: 'Error Handling in Rust vs Python',
+    description: 'Comparing error handling approaches between Python and Rust',
+    url: 'https://www.youtube.com/watch?v=2BB7ZkF7z8k&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=2',
+    category: 'Video Tutorials',
+    type: 'video',
+    thumbnail: 'https://img.youtube.com/vi/2BB7ZkF7z8k/maxresdefault.jpg'
+  },
+  {
+    title: 'Rust Modules and Python Packages',
+    description: 'Understanding Rust modules and how they compare to Python packages',
+    url: 'https://www.youtube.com/watch?v=2BB7ZkF7z8k&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=3',
+    category: 'Video Tutorials',
+    type: 'video',
+    thumbnail: 'https://img.youtube.com/vi/2BB7ZkF7z8k/maxresdefault.jpg'
+  },
+];
 
 function getIconForType(type: string) {
   switch (type) {
@@ -146,12 +181,16 @@ function getIconForType(type: string) {
       return <Book className="h-5 w-5" />
     case 'tool':
       return <Terminal className="h-5 w-5" />
-    case 'library':
-      return <Code className="h-5 w-5" />
     case 'community':
       return <Users className="h-5 w-5" />
     case 'tutorial':
       return <FileText className="h-5 w-5" />
+    case 'video':
+      return <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+      </svg>
+    case 'library':
+      return <Code className="h-5 w-5" />
     default:
       return <Zap className="h-5 w-5" />
   }
@@ -171,6 +210,8 @@ function getColorForType(type: string) {
       return 'text-yellow-600 bg-yellow-50 border-yellow-200 dark:text-yellow-400 dark:bg-yellow-900/20 dark:border-yellow-800'
     case 'tutorial':
       return 'text-pink-600 bg-pink-50 border-pink-200 dark:text-pink-400 dark:bg-pink-900/20 dark:border-pink-800'
+    case 'video':
+      return 'text-red-600 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-900/20 dark:border-red-800'
     default:
       return 'text-gray-600 bg-gray-50 border-gray-200 dark:text-gray-400 dark:bg-gray-900/20 dark:border-gray-800'
   }
@@ -178,6 +219,7 @@ function getColorForType(type: string) {
 
 export default function ResourcesPage() {
   const categories = Array.from(new Set(resources.map(r => r.category)))
+  const videoResources = resources.filter(resource => resource.type === 'video')
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -207,6 +249,73 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* Video Tutorials Section */}
+      {videoResources.length > 0 && (
+        <section className="mb-16">
+          <div className="flex items-center mb-6">
+            <div className={`p-2 rounded-lg ${getColorForType('video')} mr-3`}>
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Video Tutorials</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {videoResources.map((resource, index) => (
+              <div key={index} className="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform duration-200 hover:scale-105">
+                <div className="relative pt-[56.25%] overflow-hidden">
+                  <img 
+                    src={resource.thumbnail} 
+                    alt={resource.title}
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-red-600 rounded-full p-3 opacity-90 hover:opacity-100 transition-opacity">
+                      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 p-6 flex flex-col justify-between">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-red-600 dark:text-red-400">
+                      {resource.category}
+                    </p>
+                    <a href={resource.url} target="_blank" rel="noopener noreferrer" className="block mt-2">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                        {resource.title}
+                      </h3>
+                      <p className="mt-3 text-base text-gray-500 dark:text-gray-300">
+                        {resource.description}
+                      </p>
+                    </a>
+                  </div>
+                  <div className="mt-6 flex items-center">
+                    <div className="flex-shrink-0">
+                      <span className="sr-only">YouTube</span>
+                      <img className="h-8 w-8" src="/youtube-icon.png" alt="YouTube" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        <a href="https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                          Python to Rust Playlist
+                        </a>
+                      </p>
+                      <div className="flex space-x-1 text-sm text-gray-500 dark:text-gray-400">
+                        <span>Watch on YouTube</span>
+                        <span aria-hidden="true">&rarr;</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Resources by Category */}
       {categories.map((category) => (
         <section key={category} id={category.toLowerCase().replace(' ', '-')} className="mb-16">
@@ -215,7 +324,7 @@ export default function ResourcesPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources
-              .filter(resource => resource.category === category)
+              .filter(resource => resource.category === category && resource.type !== 'video')
               .map((resource, index) => (
                 <a
                   key={index}

@@ -13,7 +13,13 @@ export default function Footer() {
               Helping Python developers transition to Rust with practical tutorials and guides.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://github.com/AlexsJones/py2rs" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="View on GitHub"
+              >
                 <Github className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
