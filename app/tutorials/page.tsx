@@ -42,6 +42,14 @@ const tutorials: Tutorial[] = [
     readTime: '15 min',
     difficulty: 'Intermediate',
     tags: ['cli', 'project', 'practical']
+  },
+  {
+    slug: 'async-with-tokio',
+    title: 'Async Programming with Tokio',
+    description: 'Learn how to write asynchronous Rust code with Tokio, comparing it to Python\'s asyncio.',
+    readTime: '15 min',
+    difficulty: 'Advanced',
+    tags: ['async', 'concurrency', 'networking']
   }
 ]
 
@@ -129,7 +137,6 @@ export default function TutorialsPage() {
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               'Error Handling: Python Exceptions vs Rust Result',
-              'Async Programming: asyncio vs Tokio',
               'Testing: pytest vs Rust Testing Framework'
             ].map((title, index) => (
               <div

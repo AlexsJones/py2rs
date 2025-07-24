@@ -1,5 +1,6 @@
 {
   "/not-found": "app/not-found.js",
-  "/resources/page": "app/resources/page.js",
-  "/about/page": "app/about/page.js"
+  "/tutorials/async-with-tokio/page": "app/tutorials/async-with-tokio/page.js",
+  "/tutorials/page": "app/tutorials/page.js",
+  "/tutorials/variables-and-mutability/page": "app/tutorials/variables-and-mutability/page.js"
 }
