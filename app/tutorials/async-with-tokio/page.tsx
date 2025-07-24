@@ -139,6 +139,45 @@ export default function AsyncWithTokioTutorial() {
         />
       </section>
 
+      {/* Use Cases */}
+      <section className="mb-12" id="use-cases">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          When to Use Python vs Rust
+        </h2>
+        
+        <div className="prose dark:prose-invert max-w-none">
+          <p>Both Python's asyncio and Rust's Tokio are powerful tools, but they excel in different scenarios. Here's when you might choose one over the other:</p>
+          
+          <h3 className="text-xl font-semibold mt-6 mb-3">Choose Python's asyncio when:</h3>
+          <ul className="list-disc pl-6 space-y-2 mb-6">
+            <li>You need rapid development and prototyping</li>
+            <li>Your team is more familiar with Python</li>
+            <li>You're building web applications (especially with frameworks like FastAPI or Django)</li>
+            <li>You need access to Python's extensive ecosystem of libraries</li>
+            <li>Your application is I/O bound but not CPU intensive</li>
+            <li>You're working on data processing scripts or automation</li>
+          </ul>
+          
+          <h3 className="text-xl font-semibold mt-6 mb-3">Choose Rust's Tokio when:</h3>
+          <ul className="list-disc pl-6 space-y-2 mb-6">
+            <li>You need maximum performance and low-level control</li>
+            <li>Memory safety without garbage collection is important</li>
+            <li>You're building high-performance network services or systems programming</li>
+            <li>You need predictable performance with no garbage collection pauses</li>
+            <li>You want to minimize resource usage (CPU, memory, energy)</li>
+            <li>You need to handle thousands of concurrent connections efficiently</li>
+          </ul>
+          
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mt-6">
+            <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Hybrid Approach</h4>
+            <p className="text-blue-700 dark:text-blue-300">
+              Consider using both! Many projects use Python for high-level application logic and Rust for performance-critical components.
+              You can expose Rust code to Python using PyO3 for the best of both worlds.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Conclusion */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
