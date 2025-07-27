@@ -50,6 +50,14 @@ const tutorials: Tutorial[] = [
     readTime: '15 min',
     difficulty: 'Advanced',
     tags: ['async', 'concurrency', 'networking']
+  },
+  {
+    slug: 'error-handling-python-exceptions-vs-rust-result',
+    title: 'Error Handling: Python Exceptions vs Rust Result',
+    description: 'Understand how Rust’s error handling with Result differs from Python’s try/except model, and why it matters.',
+    readTime: '10 min',
+    difficulty: 'Beginner',
+    tags: ['error-handling', 'result', 'exceptions']
   }
 ]
 
@@ -136,7 +144,6 @@ export default function TutorialsPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              'Error Handling: Python Exceptions vs Rust Result',
               'Testing: pytest vs Rust Testing Framework'
             ].map((title, index) => (
               <div
