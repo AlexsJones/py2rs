@@ -11,15 +11,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/tutorials/page": [
+    "/resources/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tutorials/page.js"
-    ],
-    "/tutorials/error-handling-python-exceptions-vs-rust-result/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tutorials/error-handling-python-exceptions-vs-rust-result/page.js"
+      "static/chunks/app/resources/page.js"
     ]
   }
 }

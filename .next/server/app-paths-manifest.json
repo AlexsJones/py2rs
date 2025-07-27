@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/tutorials/page": "app/tutorials/page.js",
-  "/tutorials/error-handling-python-exceptions-vs-rust-result/page": "app/tutorials/error-handling-python-exceptions-vs-rust-result/page.js"
+  "/resources/page": "app/resources/page.js"
 }
